@@ -11,10 +11,10 @@ public class SceneControl : MonoBehaviour
 
         // if outside of buildings
         if (!StateMachine.buildingEntered) {
-            if (Input.GetKey("left")) {
-                SceneManager.LoadScene("L1");
-            } else if (Input.GetKey("right")) {
-                SceneManager.LoadScene("Plaza");
+            if (Input.GetKey("left") && StateMachine.currentScene != "L1") {
+                Initiate.Fade("L1", Color.black, 10f);
+            } else if (Input.GetKey("right") && StateMachine.currentScene != "Plaza") {
+                Initiate.Fade("Plaza", Color.black, 10f);
             }
         }
 
