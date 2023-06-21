@@ -43,6 +43,15 @@ public class SceneControl : MonoBehaviour
             } else if (Input.GetKey(KeyCode.Alpha5)){
                 StateMachine.buildingEntered = true;
                 SceneManager.LoadScene("b-Clothes");
+            } else if (Input.GetKey(KeyCode.LeftShift)) {
+                SceneManager.LoadScene("Directory");
+            }
+        }
+
+        // if in directory
+        if (StateMachine.currentScene == "Directory") {
+            if (Input.GetKey(KeyCode.LeftShift)) {
+                SceneManager.LoadScene("Plaza");
             }
         }
         
