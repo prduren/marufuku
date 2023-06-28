@@ -2,6 +2,7 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - Intro
+    - Inventory
     - ItemController
     - SceneControl
     - StateMachine
@@ -74,7 +75,9 @@ ScriptsOnlyBuild:
     Unity.VisualScripting.Core:
     - Unity.VisualScripting.SerializationData
     UnityEngine.CoreModule:
+    - UnityEngine.Events.ArgumentCache
     - UnityEngine.Events.PersistentCallGroup
+    - UnityEngine.Events.PersistentListenerMode
     UnityEngine.TextCoreFontEngineModule:
     - UnityEngine.TextCore.FaceInfo
     - UnityEngine.TextCore.Glyph
@@ -87,7 +90,19 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
     - UnityEngine.UI.Navigation
     - UnityEngine.UI.SpriteState
-  methodsToPreserve: []
+  methodsToPreserve:
+  - assembly: Assembly-CSharp
+    fullTypeName: ItemController
+    methodName: AddItemToInventory
+  - assembly: Assembly-CSharp
+    fullTypeName: ItemController
+    methodName: AddItemToLimboInventory
+  - assembly: Assembly-CSharp
+    fullTypeName: ItemController
+    methodName: AddItemToLimboInventory
+  - assembly: Assembly-CSharp
+    fullTypeName: ItemController
+    methodName: AddItemToLimboInventory
   sceneClasses:
     Assets/Scenes/Directory.unity:
     - Class: 1
@@ -135,6 +150,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
+    - Class: 49
+      Script: {instanceID: 0}
     - Class: 74
       Script: {instanceID: 0}
     - Class: 81
@@ -146,8 +163,18 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
+      Script: {instanceID: 2322}
+    - Class: 114
+      Script: {instanceID: 4724}
+    - Class: 114
+      Script: {instanceID: 5056}
+    - Class: 114
+      Script: {instanceID: 5968}
+    - Class: 114
       Script: {instanceID: 258060}
     - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -170,20 +197,12 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
-    - Class: 49
-      Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 2322}
-    - Class: 114
       Script: {instanceID: 3090}
-    - Class: 114
-      Script: {instanceID: 4724}
-    - Class: 114
-      Script: {instanceID: 5056}
     - Class: 114
       Script: {instanceID: 5968}
     - Class: 114
@@ -198,6 +217,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 35092}
     - Class: 114
       Script: {instanceID: 152658}
+    - Class: 114
+      Script: {instanceID: 261220}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1419,7 +1440,7 @@ ScriptsOnlyBuild:
     className: Objects
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: a83a3297d13d1f8ab679bc92619ed26a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ItemController
@@ -1429,8 +1450,15 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Intro
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Inventory
   platform: 19
   scenePathNames:
+  - Assets/Scenes/Intro.unity
   - Assets/Scenes/L1.unity
   - Assets/Scenes/Plaza.unity
   - Assets/Scenes/b-Groceries.unity
@@ -1439,5 +1467,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/b-Gym.unity
   - Assets/Scenes/b-Outdoor.unity
   - Assets/Scenes/Directory.unity
-  - Assets/Scenes/Intro.unity
-  playerPath: P:/Unity/Projects/built/marufuku.exe
+  playerPath: P:/Unity/Projects/built/marufuku_6.25.23/marufuku.exe

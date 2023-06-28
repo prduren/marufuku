@@ -11,8 +11,10 @@ public class ItemController : MonoBehaviour
     // if inventory full when click buy, throw "inventory full" text
 
     public GameObject ItemButtons;
+    public static GameObject FilledInventoryCircle;
 
     void Start() { 
+        FilledInventoryCircle = GameObject.Find("FilledInventoryCircle");
     }
 
     void Update() {
@@ -25,6 +27,6 @@ public class ItemController : MonoBehaviour
 
     public void AddItemToInventory() {
         StateMachine.inventory.Add(StateMachine.limboInventory);
-        // TODO: add item to inventory UI
+        FilledInventoryCircle.GetComponent<SpriteRenderer>().enabled = true;
     }
 }

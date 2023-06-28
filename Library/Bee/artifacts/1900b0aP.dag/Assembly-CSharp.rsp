@@ -320,6 +320,7 @@
 -r:"Library/Bee/artifacts/1900b0aP.dag/Unity.VisualScripting.State.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aP.dag/UnityEngine.UI.ref.dll"
 "Assets/Scripts/Intro.cs"
+"Assets/Scripts/Inventory.cs"
 "Assets/Scripts/ItemController.cs"
 "Assets/Scripts/Objects.cs"
 "Assets/Scripts/SceneControl.cs"

@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro; //IF USING TEXT MESH PRO
+using TMPro; 
 
 public class Timer : MonoBehaviour
 {
