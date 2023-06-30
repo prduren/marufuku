@@ -24,23 +24,24 @@ public class ClickColliderDetector : MonoBehaviour
                     foreach (KeyValuePair<string, string> kvp in Objects.reqs) {
                         if (StateMachine.currentScene == kvp.Key) {
                             int numberOfReqs = StateMachine.GetNumberOfReqs(kvp.Value);
-                            // loopCounter = 0;
                             foreach(var item in StateMachine.inventory) {
-                                // loopCounter = loopCounter + 1;                          
                                 if (kvp.Value.Contains(item.ToString())) {
-                                    Debug.Log("success!");
-                                    StateMachine.levelPassed = true;
+                                    // Debug.Log("success!");
+                                    StateMachine.passedReqsCounter = StateMachine.passedReqsCounter + 1;
                                 } else if (!kvp.Value.Contains(item.ToString())) {
-                                    Debug.Log("failure!");
+                                    // Debug.Log("failure!");
                                     StateMachine.levelPassed = false;
                                     break;
+                                }
+                                if (StateMachine.passedReqsCounter == numberOfReqs) {
+                                    StateMachine.levelPassed = true;
                                 }
                             } 
                         }
                     } if (StateMachine.levelPassed) { 
-                        Debug.Log("wow you did it"); 
+                        Debug.Log("LEVEL PASSED!"); 
                       } else {  
-                            Debug.Log("fail! try again!");
+                            Debug.Log("YOU LOST");
                         }
                 }
             }

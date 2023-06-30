@@ -11,6 +11,7 @@ public class StateMachine : MonoBehaviour
     public static string limboInventory;
     public static ArrayList levelRequirements = new ArrayList();
     public static bool levelPassed = false;
+    public static int passedReqsCounter = 0;
 
     void Start() {
         currentScene = SceneManager.GetActiveScene().name;

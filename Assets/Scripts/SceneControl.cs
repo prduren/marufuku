@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+// TODO: fix hard coding of level. Set active level name at level load?
+
 public class SceneControl : MonoBehaviour
 {
 
@@ -12,8 +14,8 @@ public class SceneControl : MonoBehaviour
 
         // if outside of buildings
         if (!StateMachine.buildingEntered) {
-            if (Input.GetKey("left") && StateMachine.currentScene != "L1") {
-                Initiate.Fade("L1", Color.black, 10f);
+            if (Input.GetKey("left") && StateMachine.currentScene != "L2") {
+                Initiate.Fade("L2", Color.black, 10f);
             } else if (Input.GetKey("right") && StateMachine.currentScene != "Plaza") {
                 Initiate.Fade("Plaza", Color.black, 10f);
             }
