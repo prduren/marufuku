@@ -6,9 +6,7 @@ using UnityEngine.EventSystems;
 public class ItemController : MonoBehaviour
 {
 
-    // grab selected button text, store it
-    // if click buy, store text in inventory
-    // if inventory full when click buy, throw "inventory full" text
+    // TODO: if inventory full when click buy, throw "inventory full" text and redirect to trashcan
 
     public GameObject ItemButtons;
     public static GameObject FilledInventoryCircle;
