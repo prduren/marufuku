@@ -12,6 +12,7 @@ public class StateMachine : MonoBehaviour
     public static ArrayList levelRequirements = new ArrayList();
     public static bool levelPassed = false;
     public static int passedReqsCounter = 0;
+    public static string currentLevel;
 
     void Start() {
         currentScene = SceneManager.GetActiveScene().name;
