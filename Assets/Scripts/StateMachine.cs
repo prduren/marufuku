@@ -13,6 +13,7 @@ public class StateMachine : MonoBehaviour
     public static bool levelPassed = false;
     public static int passedReqsCounter = 0;
     public static string currentLevel;
+    public static int currentLevelNumber;
 
     void Start() {
         currentScene = SceneManager.GetActiveScene().name;

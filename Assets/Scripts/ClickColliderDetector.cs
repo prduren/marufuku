@@ -1,11 +1,8 @@
 using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-
-// TODO: successful checks on two items in inv with two requirements
-// TODO: FALSE passes with only one item in inventory. Need to fail if all reqs aren't met.
-// TODO: increment counter if successful? Counter needs to equal reqNumber for a pass condition?
 
 public class ClickColliderDetector : MonoBehaviour
 {
@@ -38,9 +35,12 @@ public class ClickColliderDetector : MonoBehaviour
                                 }
                             } 
                         }
-                    } if (StateMachine.levelPassed) { 
-                        Debug.Log("LEVEL PASSED!"); 
-                      } else {  
+                    } if (StateMachine.levelPassed) {
+                        string substringedLevelName = StateMachine.currentLevel.Substring(1);
+                        int newLevelNumberToLoad = Int32.Parse(substringedLevelName) + 1;
+                        Initiate.Fade("L" + newLevelNumberToLoad, Color.black, 10f);
+                        StateMachine.levelPassed = false;
+                        } else {  
                             Debug.Log("YOU LOST");
                         }
                 }
@@ -48,26 +48,3 @@ public class ClickColliderDetector : MonoBehaviour
         }
     }
 }
-
-/*
-// Loop through the requirements
-    foreach (Item requirement in tradegoodRequirements)
-    {
-        // For each requirement check content in warehouse
-        foreach (Item content in warehouse.warehouseContent)
-        {
-            // When content is not requirement skip the check
-            if (content.scripableTradegood != requirement.scripableTradegood) continue;
-
-            // When right content was found
-            if (content.scripableTradegood == requirement.scripableTradegood)
-            {
-
-                // If required content amount isnt present return
-                if (content.amount < requirement.amount) return;
-
-                /*
-            }
-        }
-    }
-    */
