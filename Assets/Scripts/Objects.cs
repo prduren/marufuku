@@ -10,7 +10,14 @@ public class Objects : MonoBehaviour
     public static Dictionary<string, string> reqs = new Dictionary<string, string>(){
 	    {"L1", "RainJacket"},
 	    {"L2", "RainJacket, Canoe"},
-	    {"L3", "GetStrong, Canoe"}
+	    {"L3", "GetStrong, Canoe"},
+		{"L4", "Cheese, Tomato, Cabbage"},
+	    {"L5", "Carrot"},
+	    {"L6", "GetStrong, Canoe"},
+		{"L7", "RainJacket"},
+	    {"L8", "RainJacket, Canoe"},
+	    {"L9", "GetStrong, Canoe"},
+		{"L10", "RainJacket"},
     };
 }
 

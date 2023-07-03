@@ -23,6 +23,7 @@ public class ClickColliderDetector : MonoBehaviour
                     StateMachine.inventory.Clear();
                     ItemController.FilledInventoryCircle.GetComponent<SpriteRenderer>().enabled = false;
                 } else if (hit.collider.name == "PassThroughBackground") {
+
                     foreach (KeyValuePair<string, string> kvp in Objects.reqs) {
                         if (StateMachine.currentScene == kvp.Key) {
                             int numberOfReqs = StateMachine.GetNumberOfReqs(kvp.Value);
