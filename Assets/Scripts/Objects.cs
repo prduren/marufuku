@@ -13,7 +13,7 @@ public class Objects : MonoBehaviour
 	    {"L3", "GetStrong, Canoe"},
 		{"L4", "Cheese, Tomato, Cabbage"},
 	    {"L5", "Carrot"},
-	    {"L6", "GetStrong, Canoe"},
+	    {"L6", "HikingBoots, RainJacket, Carrot"},
 		{"L7", "RainJacket"},
 	    {"L8", "RainJacket, Canoe"},
 	    {"L9", "GetStrong, Canoe"},
