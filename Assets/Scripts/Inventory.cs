@@ -6,7 +6,10 @@ public class Inventory : MonoBehaviour
 {
     void Start()
     {
-        DontDestroyOnLoad(gameObject);
+        if (!StateMachine.inventoryHasBeenLoaded) {
+            DontDestroyOnLoad(gameObject);
+        }
+        StateMachine.inventoryHasBeenLoaded = true;
     }
 
     void Update()

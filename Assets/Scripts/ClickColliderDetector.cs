@@ -45,7 +45,9 @@ public class ClickColliderDetector : MonoBehaviour
                         int newLevelNumberToLoad = Int32.Parse(substringedLevelName) + 1;
                         Initiate.Fade("L" + newLevelNumberToLoad, Color.black, 10f);
                         StateMachine.passedReqsCounter = 0;
-                        Destroy(Inventory);
+                        // Destroy(Inventory);
+                        StateMachine.inventory.Clear();
+                        ItemController.FilledInventoryCircle.GetComponent<SpriteRenderer>().enabled = false;
                         StateMachine.levelPassed = false;
                         } else {  
                             Debug.Log("YOU LOST");

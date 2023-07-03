@@ -14,6 +14,7 @@ public class StateMachine : MonoBehaviour
     public static int passedReqsCounter = 0;
     public static string currentLevel;
     public static int currentLevelNumber;
+    public static bool inventoryHasBeenLoaded = false;
 
     void Start() {
         currentScene = SceneManager.GetActiveScene().name;
