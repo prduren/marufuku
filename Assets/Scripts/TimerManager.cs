@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class TimerManager
 {
-    public static float myTimer = 30;
+    public static float myTimer = 180;
 }

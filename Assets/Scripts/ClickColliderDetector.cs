@@ -7,9 +7,14 @@ using UnityEngine.EventSystems;
 public class ClickColliderDetector : MonoBehaviour
 {
 
+    public GameObject Inventory;
+
     private void Update() {
         
         if (Input.GetMouseButtonDown(0)) {
+
+            Debug.Log("lp:" + StateMachine.levelPassed + " - " );
+
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
             if (hit.collider != null) {
@@ -39,6 +44,8 @@ public class ClickColliderDetector : MonoBehaviour
                         string substringedLevelName = StateMachine.currentLevel.Substring(1);
                         int newLevelNumberToLoad = Int32.Parse(substringedLevelName) + 1;
                         Initiate.Fade("L" + newLevelNumberToLoad, Color.black, 10f);
+                        StateMachine.passedReqsCounter = 0;
+                        Destroy(Inventory);
                         StateMachine.levelPassed = false;
                         } else {  
                             Debug.Log("YOU LOST");
