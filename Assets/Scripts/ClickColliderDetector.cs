@@ -51,7 +51,8 @@ public class ClickColliderDetector : MonoBehaviour
                         ItemController.FilledInventoryCircle.GetComponent<SpriteRenderer>().enabled = false;
                         StateMachine.levelPassed = false;
                         } else {  
-                            Debug.Log("YOU LOST");
+                            StateMachine.inventory.Clear();
+                            ItemController.FilledInventoryCircle.GetComponent<SpriteRenderer>().enabled = false;
                         }
                 }
             }
