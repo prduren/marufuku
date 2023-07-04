@@ -15,7 +15,7 @@ public class Objects : MonoBehaviour
 	    {"L5", "Carrot"},
 	    {"L6", "HikingBoots, RainJacket, Carrot"},
 		{"L7", "LoseWeight"},
-	    {"L8", "RainJacket, Canoe"},
+	    {"L8", "Jeans, Hat"},
 	    {"L9", "GetStrong, Canoe"},
 		{"L10", "RainJacket"},
     };
