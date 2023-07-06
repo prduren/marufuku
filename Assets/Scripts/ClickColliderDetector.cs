@@ -4,8 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-// TODO: disable fail text after certain amount of time
-
 public class ClickColliderDetector : MonoBehaviour
 {
 
@@ -19,12 +17,10 @@ public class ClickColliderDetector : MonoBehaviour
     private void Update() {
  
         if (Input.GetMouseButtonDown(0)) {
-
-            Debug.Log("lp:" + StateMachine.levelPassed + " - " );
-
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
             if (hit.collider != null) {
+                
                 if (hit.collider.name == "trashcan") {
                     StateMachine.inventory.Clear();
                     ItemController.FilledInventoryCircle.GetComponent<SpriteRenderer>().enabled = false;
@@ -60,6 +56,10 @@ public class ClickColliderDetector : MonoBehaviour
                             FailText.GetComponent<SpriteRenderer>().enabled = true;
                         }
                     
+                } else if (hit.collider.name == "ToPlazaArrow") {
+                    Initiate.Fade("Plaza", Color.black, 10f);
+                } else if (hit.collider.name == "ToObstacleArrow") {
+                    Initiate.Fade(StateMachine.currentLevel, Color.black, 10f);
                 }
             }
         }
