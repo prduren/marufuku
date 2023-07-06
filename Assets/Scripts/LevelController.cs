@@ -8,5 +8,6 @@ public class LevelController : MonoBehaviour
     void Start()
     {
         StateMachine.currentLevel = SceneManager.GetActiveScene().name;
+        StateMachine.levelPassed = false;
     }
 }

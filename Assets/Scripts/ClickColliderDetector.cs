@@ -4,13 +4,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+// TODO: disable fail text after certain amount of time
+
 public class ClickColliderDetector : MonoBehaviour
 {
 
     public GameObject Inventory;
+    GameObject FailText;
+
+    private void Start() {
+        FailText = GameObject.Find("FAILURETEXT");
+    }
 
     private void Update() {
-        
+ 
         if (Input.GetMouseButtonDown(0)) {
 
             Debug.Log("lp:" + StateMachine.levelPassed + " - " );
@@ -19,7 +26,6 @@ public class ClickColliderDetector : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
             if (hit.collider != null) {
                 if (hit.collider.name == "trashcan") {
-                    // clears up to 10 elements in inventory - just to be safe
                     StateMachine.inventory.Clear();
                     ItemController.FilledInventoryCircle.GetComponent<SpriteRenderer>().enabled = false;
                 } else if (hit.collider.name == "PassThroughBackground") {
@@ -29,10 +35,8 @@ public class ClickColliderDetector : MonoBehaviour
                             int numberOfReqs = StateMachine.GetNumberOfReqs(kvp.Value);
                             foreach(var item in StateMachine.inventory) {
                                 if (kvp.Value.Contains(item.ToString())) {
-                                    // Debug.Log("success!");
                                     StateMachine.passedReqsCounter = StateMachine.passedReqsCounter + 1;
                                 } else if (!kvp.Value.Contains(item.ToString())) {
-                                    // Debug.Log("failure!");
                                     StateMachine.levelPassed = false;
                                     break;
                                 }
@@ -49,11 +53,13 @@ public class ClickColliderDetector : MonoBehaviour
                         // Destroy(Inventory);
                         StateMachine.inventory.Clear();
                         ItemController.FilledInventoryCircle.GetComponent<SpriteRenderer>().enabled = false;
-                        StateMachine.levelPassed = false;
-                        } else {  
+                        // StateMachine.levelPassed = false;
+                        } else {
                             StateMachine.inventory.Clear();
                             ItemController.FilledInventoryCircle.GetComponent<SpriteRenderer>().enabled = false;
+                            FailText.GetComponent<SpriteRenderer>().enabled = true;
                         }
+                    
                 }
             }
         }

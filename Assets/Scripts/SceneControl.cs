@@ -7,6 +7,12 @@ using UnityEngine.SceneManagement;
 public class SceneControl : MonoBehaviour
 {
 
+    GameObject FailText;
+
+    void Start() {
+        FailText = GameObject.Find("FAILURETEXT");
+    }
+
     void Update()
     {
 
@@ -16,6 +22,9 @@ public class SceneControl : MonoBehaviour
                 Initiate.Fade(StateMachine.currentLevel, Color.black, 10f);
             } else if (Input.GetKey("right") && StateMachine.currentScene != "Plaza") {
                 Initiate.Fade("Plaza", Color.black, 10f);
+                if (FailText != null) {
+                    FailText.GetComponent<SpriteRenderer>().enabled = false;
+                }
             }
         }
 
