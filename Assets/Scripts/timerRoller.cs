@@ -6,11 +6,11 @@ public class timerRoller : MonoBehaviour
 {
     private float timerRollerImageX;
     public GameObject timerRollerImage;
-    private bool timerRollerLoaded = false;
+    GameObject EndScrene;
 
     void Start() {
-        timerRollerLoaded = true;
         timerRollerImageX = timerRollerImage.transform.position.x;
+        EndScrene = GameObject.Find("nightTime_0");
     }
 
     void Update() {
@@ -19,7 +19,7 @@ public class timerRoller : MonoBehaviour
         }
         timerRollerImage.transform.position = new Vector3(timerRollerImageX, timerRollerImage.transform.position.y, timerRollerImage.transform.position.z);
         if (timerRollerImage.transform.position.x < -8.04f) {
-            Debug.Log("nighttime!");
+            EndScrene.GetComponent<SpriteRenderer>().enabled = true;
         }
     }
 }
