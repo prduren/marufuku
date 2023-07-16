@@ -26,7 +26,7 @@ public class Timer : MonoBehaviour
 
             timerText.text = minutesLeft + ":" + seconds;
         } else {
-            Debug.Log("GAME OVER");
+            // Debug.Log("GAME OVER");
         }
         
     }
