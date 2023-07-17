@@ -17,7 +17,6 @@ public class StateMachine : MonoBehaviour
     public static string currentLevel;
     public static int currentLevelNumber;
     public static bool inventoryHasBeenLoaded = false;
-    public static Vector3 originalTimerRollerPos;
 
     void Start() {
         currentScene = SceneManager.GetActiveScene().name;
