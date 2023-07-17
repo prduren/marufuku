@@ -15,7 +15,8 @@ public class timerRoller : MonoBehaviour
 
     void Update() {
         if (timerRollerImage.transform.position.x > -8.04f) {
-                    timerRollerImageX = timerRollerImageX - 1f * Time.deltaTime;
+            // change subtracted time for how fast level goes
+            timerRollerImageX = timerRollerImageX - .25f * Time.deltaTime;
         }
         timerRollerImage.transform.position = new Vector3(timerRollerImageX, timerRollerImage.transform.position.y, timerRollerImage.transform.position.z);
         if (timerRollerImage.transform.position.x < -8.04f) {
