@@ -48,16 +48,29 @@ public class ClickColliderDetector : MonoBehaviour
                         StateMachine.passedReqsCounter = 0;
                         StateMachine.inventory.Clear();
                         ItemController.FilledInventoryCircle.GetComponent<SpriteRenderer>().enabled = false;
-                        } else {
+                        } else if (!StateMachine.levelPassed) {
                             StateMachine.inventory.Clear();
                             ItemController.FilledInventoryCircle.GetComponent<SpriteRenderer>().enabled = false;
                             FailText.GetComponent<SpriteRenderer>().enabled = true;
                         }
                     
                 } else if (hit.collider.name == "ToPlazaArrow") {
+                    if (FailText != null) {
+                        FailText.GetComponent<SpriteRenderer>().enabled = false;
+                    }
                     Initiate.Fade("Plaza", Color.black, 10f);
                 } else if (hit.collider.name == "ToObstacleArrow") {
                     Initiate.Fade(StateMachine.currentLevel, Color.black, 10f);
+                } else if (hit.collider.name == "FirstBuildingButton") {
+                    Initiate.Fade("b-Donuts", Color.black, 10f);
+                } else if (hit.collider.name == "SecondBuildingButton") {
+                    Initiate.Fade("b-Outdoor", Color.black, 10f);
+                } else if (hit.collider.name == "ThirdBuildingButton") {
+                    Initiate.Fade("b-Groceries", Color.black, 10f);
+                } else if (hit.collider.name == "FourthBuildingButton") {
+                    Initiate.Fade("b-Gym", Color.black, 10f);
+                } else if (hit.collider.name == "FifthBuildingButton") {
+                    Initiate.Fade("b-Clothes", Color.black, 10f);
                 }
             }
         }
