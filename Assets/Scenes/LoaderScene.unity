@@ -494,7 +494,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 836795581}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.28705987, y: -0.12320401, z: 0.13271682}
+  m_LocalPosition: {x: -1.2200001, y: -0.12320401, z: 0.13271682}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -792,7 +792,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1451057575}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.28705987, y: -0.12320401, z: 0.13271682}
+  m_LocalPosition: {x: -1.22, y: -0.12320401, z: 0.13271682}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1084,7 +1084,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2031913171}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.10899997, y: -0.24400008, z: 50}
+  m_LocalPosition: {x: -0.8239403, y: -0.24400008, z: 50}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1130,7 +1130,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Inventory: {fileID: 785174290}
-  timerRollerImagePlaceholder: {fileID: 1057958325}
 --- !u!212 &2031913175
 SpriteRenderer:
   m_ObjectHideFlags: 0
