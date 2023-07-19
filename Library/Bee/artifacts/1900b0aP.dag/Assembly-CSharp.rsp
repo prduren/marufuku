@@ -340,6 +340,7 @@
 "Assets/Scripts/StateMachine.cs"
 "Assets/Scripts/Timer.cs"
 "Assets/Scripts/TimerManager.cs"
+"Assets/Scripts/timerRoller.cs"
 "Assets/Simple Scene Fade Load System/Scripts/Fader.cs"
 "Assets/Simple Scene Fade Load System/Scripts/Initiate.cs"
 -langversion:9.0
