@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// TODO: set originalTimerRollerPos to OG pos so we can reset it every level
-
 public class StateMachine : MonoBehaviour
 {
     public static string currentScene;
@@ -17,6 +15,7 @@ public class StateMachine : MonoBehaviour
     public static string currentLevel;
     public static int currentLevelNumber;
     public static bool inventoryHasBeenLoaded = false;
+    public static int numberOfReqs;
 
     void Start() {
         currentScene = SceneManager.GetActiveScene().name;

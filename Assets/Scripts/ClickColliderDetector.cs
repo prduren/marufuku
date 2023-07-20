@@ -28,7 +28,7 @@ public class ClickColliderDetector : MonoBehaviour
 
                     foreach (KeyValuePair<string, string> kvp in Objects.reqs) {
                         if (StateMachine.currentScene == kvp.Key) {
-                            int numberOfReqs = StateMachine.GetNumberOfReqs(kvp.Value);
+                            StateMachine.numberOfReqs = StateMachine.GetNumberOfReqs(kvp.Value);
                             foreach(var item in StateMachine.inventory) {
                                 if (kvp.Value.Contains(item.ToString())) {
                                     StateMachine.passedReqsCounter = StateMachine.passedReqsCounter + 1;
@@ -36,7 +36,7 @@ public class ClickColliderDetector : MonoBehaviour
                                     StateMachine.levelPassed = false;
                                     break;
                                 }
-                                if (StateMachine.passedReqsCounter == numberOfReqs) {
+                                if (StateMachine.passedReqsCounter == StateMachine.numberOfReqs) {
                                     StateMachine.levelPassed = true;
                                 }
                             } 
